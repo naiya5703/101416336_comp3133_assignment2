@@ -1,0 +1,30 @@
+<div>
+    <h2>{{ isEditMode ? 'Edit' : 'Add' }} Employee</h2>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <label>First Name:</label>
+      <input formControlName="first_name" type="text">
+      <label>Last Name:</label>
+      <input formControlName="last_name" type="text">
+      <label>Email:</label>
+      <input formControlName="email" type="email">
+      <label>Gender:</label>
+      <select formControlName="gender">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      <label>Designation:</label>
+      <input formControlName="designation" type="text">
+      <label>Department:</label>
+      <input formControlName="department" type="text">
+      <label>Salary:</label>
+      <input formControlName="salary" type="number">
+      <label>Date of Joining:</label>
+      <input formControlName="date_of_joining" type="date">
+      <label>Profile Picture:</label>
+      <input type="file" (change)="onFileSelected($event)">
+      <button type="submit">{{ isEditMode ? 'Update' : 'Add' }} Employee</button>
+    </form>
+  </div>
+  
